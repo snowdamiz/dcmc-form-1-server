@@ -40,8 +40,8 @@ app.post('/api/send', (req, res) => {
 
     let mailOptions = {
         from: '"Sam" <sam@gromarketing.io>',
-        to: ['yurlovandrew@gmail.com'],
-        // to: ['yurlovandrew@gmail.com', 'webleads@dcmotors.dsmessage.com'],
+        // to: ['yurlovandrew@gmail.com'],
+        to: ['yurlovandrew@gmail.com', 'webleads@dcmotors.dsmessage.com'],
         subject: 'D&C Web Lead',
         html: WebLead(req.body),
     };    
