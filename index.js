@@ -20,20 +20,28 @@ app.use((req, res, next) => {
     next();
 });
 
+// app.get('/api/getcsv', (req, res) => {
+//     const csv = require('./dcm.scv');
+
+//     res.set('Content-Type', 'application/octet-stream');
+//     res.send(csv);
+// });
+
 app.post('/api/send', (req, res) => {
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         auth: {
-            user: 'stuntlyfee@gmail.com',
-            pass: 'H@cked123'
+            user: USERNAME,
+            pass: PASSWORD
         }
     });
 
     let mailOptions = {
         from: '"Sam" <sam@gromarketing.io>',
-        to: ['yurlovandrew@gmail.com', 'webleads@dcmotors.dsmessage.com'],
+        to: ['yurlovandrew@gmail.com'],
+        // to: ['yurlovandrew@gmail.com', 'webleads@dcmotors.dsmessage.com'],
         subject: 'D&C Web Lead',
         html: WebLead(req.body),
     };    
